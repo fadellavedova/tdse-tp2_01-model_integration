@@ -109,9 +109,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  //HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7)
     /* USER CODE BEGIN 3 */
-
 	  /* Application Update */
 	  app_update();
   }
@@ -211,6 +210,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LD2_Pin */
   GPIO_InitStruct.Pin = LD2_Pin;
